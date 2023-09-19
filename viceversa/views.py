@@ -4,4 +4,6 @@ def home(request):
     return render(request, "home.html")
 
 def reverse(request):
-    return render(request, "reverse.html")
+    getting_text = request.GET["usertext"]
+    reversed_text = getting_text[::-1]
+    return render(request, "reverse.html", {"usertext": getting_text, "reversed": reversed_text})
